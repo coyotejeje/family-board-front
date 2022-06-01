@@ -10,6 +10,7 @@ export class AuthService {
 
   private user: BehaviorSubject<User|null> = new BehaviorSubject<User|null>(null);
   readonly user$: Observable<User|null> = this.user.asObservable();
+  private urlApi: string = "http://localhost:8080/api/login"
 
   constructor(private http: HttpClient) { }
 
