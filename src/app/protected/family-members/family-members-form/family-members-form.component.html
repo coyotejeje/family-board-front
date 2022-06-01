@@ -1,7 +1,13 @@
 <form [formGroup]="familyMemberForm">
-  <app-family-members-form-members [familyMemberForm]="familyMemberForm" [members]="members"></app-family-members-form-members>
+  <app-family-members-form-members 
+    [familyMemberForm]="familyMemberForm" 
+    [members]="members">
+  </app-family-members-form-members>
   <div class="text-center py-3">
-    <button (click)="submit()" type="submit" class="btn btn-success btn-lg" [disabled]="familyMemberForm.invalid">
+    <button  
+      (click)="submit()" 
+      type="submit" class="btn btn-success btn-lg" 
+      [disabled]="familyMemberForm.invalid">
       Sauvegarder
     </button>
   </div>

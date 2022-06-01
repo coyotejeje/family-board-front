@@ -1,5 +1,5 @@
 <h1>Ma famille</h1>
 
-<app-family-members-form-add-group (displayAddMembersGroup)="groupCreated()"></app-family-members-form-add-group>
+<app-family-members-form-add-group (displayAddMembersGroup)="groupCreated()" (idFamilyEvent)="getIdFamily($event)"></app-family-members-form-add-group>
 
-<app-family-members-form *ngIf="groupIsCreated"></app-family-members-form>
+<app-family-members-form *ngIf="groupIsCreated" [idMember]="idMember" ></app-family-members-form>

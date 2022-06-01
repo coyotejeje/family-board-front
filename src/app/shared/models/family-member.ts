@@ -4,9 +4,9 @@ import { User } from "./user";
 
 export class FamilyMember {
     readonly id: number;
-    user: User;
+    user?: User;
     family: Family;
-    enumRole: EnumRole;
-    score: Score;
-    tasks: Array<string>;
+    //enumRole?: EnumRole;
+    //score?: Score;
+    tasks?: Array<string>;
 }

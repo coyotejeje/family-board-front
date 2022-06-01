@@ -9,13 +9,18 @@ import { FormArray, FormGroup } from '@angular/forms';
 export class FamilyMembersComponent implements OnInit {
 
   groupIsCreated: boolean = false;
-  
+  idMember: number
+
   ngOnInit(): void {}
 
   constructor() { }
   
   groupCreated() {
     this.groupIsCreated = true;
+  }
+
+  getIdFamily(idFamilyEvent: number) {
+    this.idMember = idFamilyEvent;
   }
 
 }

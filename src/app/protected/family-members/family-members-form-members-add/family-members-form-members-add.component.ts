@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { FamilyMember } from 'src/app/shared/models/family-member';
 
 @Component({
   selector: 'app-family-members-form-members-add',
@@ -8,6 +9,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class FamilyMembersFormMembersAddComponent implements OnInit {
 
   @Output() addedMember = new EventEmitter<void>();
+  familyMember: FamilyMember
 
   constructor() { }
 

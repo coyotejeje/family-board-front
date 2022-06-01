@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {FormArray, FormBuilder, FormGroup} from "@angular/forms";
+import { Router } from '@angular/router';
+import { FamilyMembersService } from 'src/app/core/services/family-members.service';
+import { FamilyMember } from 'src/app/shared/models/family-member';
 
 
 @Component({
@@ -9,9 +12,15 @@ import {FormArray, FormBuilder, FormGroup} from "@angular/forms";
 })
 export class FamilyMembersFormComponent implements OnInit {
 
+  familyMember: FamilyMember;
   familyMemberForm: FormGroup;
+  @Input() idMember: number;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private familyMembersService: FamilyMembersService
+    ) { }
 
   ngOnInit() {
     this.familyMemberForm = this.createFamilyMemberForm();
@@ -28,6 +37,11 @@ export class FamilyMembersFormComponent implements OnInit {
   }
 
   submit(): void {
-    console.info(this.familyMemberForm.value);
+    //this.familyMemberForm.value
+    this.familyMembersService.addMembersToFamily(this.familyMemberForm.value).subscribe(data => {
+      console.log(data)
+    })
+    //console.log(this.familyMemberForm.value);
+    //this.router.navigate(['/app/dashboard']);
   }
 }

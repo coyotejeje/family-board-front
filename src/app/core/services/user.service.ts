@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { User } from 'src/app/shared/models/user';
 import { environment } from 'src/environments/environment';
 const endPoint = environment.apiUrl;
 const urlUser = endPoint + "users";
@@ -10,13 +11,9 @@ const urlUser = endPoint + "users";
 })
 export class UserService {
 
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) {
-  }
-
-  getUsers():
-    Observable<any> {
-    return this.http.get<any>(urlUser, {
-  });
+  getUsers(): Observable<User|null> {
+    return this.http.get<any>(urlUser, {});
   }
 }
