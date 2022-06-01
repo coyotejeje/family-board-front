@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-family-members-form-add-group',
   templateUrl: './family-members-form-add-group.component.html',
-  styles: [
-  ]
+  styles: []
 })
 export class FamilyMembersFormAddGroupComponent implements OnInit {
+
+  @Output() displayAddMembersGroup = new EventEmitter<void>();
 
   familyMembersForm: FormGroup
 
@@ -29,5 +30,9 @@ export class FamilyMembersFormAddGroupComponent implements OnInit {
   submit() {
     console.info(this.title?.value);
     this.router.navigate(['/app/family-members']);
+  }
+
+  test() {
+    this.displayAddMembersGroup.emit();
   }
 }
