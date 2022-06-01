@@ -1,0 +1,28 @@
+<form
+  novalidate
+  class="card-body"
+  [formGroup]="familyMembersForm"
+  (ngSubmit)="submit()">
+
+  <div class="form-group">
+    <label for="title">Titre du groupe</label>
+    <input
+      id="title"
+      type="text"
+      Required
+      formControlName="title"
+      class="form-control"
+      placeholder="Votre titre"
+      autocorrect="off"
+      autocomplete="off"/>
+  </div>
+
+  <p class="text-center py-3">
+    <button
+      type="submit"
+      [disabled]="!familyMembersForm.valid"
+      class="btn"
+      [ngClass]="{'btn-success' : familyMembersForm.valid, 'btn-default' : !familyMembersForm.valid}">
+      Créer un groupe <i class="material-icons align-middle">arrow_right_alt</i>
+    </button>
+</form>
