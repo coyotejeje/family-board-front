@@ -19,7 +19,7 @@ export class FamilyService {
   }
 
   getAllFamilies(): Observable<Family[]> {
-    return this.http.get<Family[]>(urlFamily, {}) 
+    return this.http.get<Family[]>(urlFamily, {})
   }
 
 }

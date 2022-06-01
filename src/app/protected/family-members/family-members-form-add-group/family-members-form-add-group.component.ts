@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import { FamilyService } from 'src/app/core/services/family.service';
+import { UserService } from 'src/app/core/services/user.service';
 import { Family } from 'src/app/shared/models/family';
 
 @Component({
@@ -20,7 +21,8 @@ export class FamilyMembersFormAddGroupComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private familyService: FamilyService
+    private familyService: FamilyService,
+    private userService: UserService
     ) { }
 
   ngOnInit(): void {
@@ -34,7 +36,7 @@ export class FamilyMembersFormAddGroupComponent implements OnInit {
   get title() { return this.familyMembersForm.get('title') }
 
   submit() {
-    this.familyService.createAFamily(this.familyMembersForm.value).subscribe(data => {
+    this.userService.userCreateAFamily(this.familyMembersForm.value.id).subscribe(data => {
       console.log(data);
       this.idFamilyEvent.emit(data?.id);
     })

@@ -16,4 +16,8 @@ export class UserService {
   getUsers(): Observable<User|null> {
     return this.http.get<any>(urlUser, {});
   }
+
+  userCreateAFamily(user:User): Observable<User|null>{
+    return this.http.post<User>(urlUser+"/createMyFamily?userId=2&familyTitle=test", user);
+  }
 }
