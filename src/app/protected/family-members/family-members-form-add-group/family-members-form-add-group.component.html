@@ -18,11 +18,12 @@
   </div>
 
   <p class="text-center py-3">
-    <button
+    <button (click)="test()"
       type="submit"
       [disabled]="!familyMembersForm.valid"
       class="btn"
-      [ngClass]="{'btn-success' : familyMembersForm.valid, 'btn-default' : !familyMembersForm.valid}">
+      [ngClass]="{'btn-success' : familyMembersForm.valid, 'btn-default' : !familyMembersForm.valid}"
+      >
       Créer un groupe <i class="material-icons align-middle">arrow_right_alt</i>
     </button>
 </form>
