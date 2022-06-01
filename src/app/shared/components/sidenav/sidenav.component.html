@@ -1,0 +1,28 @@
+<div class="sticky-top">
+    <div class="nav flex-column">
+        <img class="card-img-top" src="assets/img/Family.jpeg" alt="sidenav banner">
+        <div class="card-header">Menu</div>
+        <ul class="list-group list-group-flush">
+            <li (click)="navigate(dashboardPath)" [class.list-group-item-success]="isActive(dashboardPath)"
+                class="list-group-item">
+                <i class="material-icons align-bottom mr-1">home</i>
+                Tableau de bord
+            </li>
+            <li (click)="navigate(familyMembersPath)" [class.list-group-item-success]="isActive(familyMembersPath)"
+                class="list-group-item">
+                <i class="material-icons align-bottom mr-1">event_note</i>
+                Ma famille
+            </li>
+            <li (click)="navigate(taskPath)" [class.list-group-item-success]="isActive(taskPath)"
+                class="list-group-item">
+                <i class="material-icons align-bottom mr-1">today</i>
+                Tâches
+            </li>
+            <li (click)="navigate(profilPath)" [class.list-group-item-success]="isActive(profilPath)"
+                class="list-group-item">
+                <i class="material-icons align-bottom mr-1">person</i>
+                Profil
+            </li>
+        </ul>
+    </div>
+</div>

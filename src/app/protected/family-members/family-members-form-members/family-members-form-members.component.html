@@ -1,0 +1,20 @@
+<div [formGroup]="familyMemberForm">
+  <div formArrayName="members">
+    <app-family-members-form-members-item
+      *ngFor="let member of memberControlList;
+      index as i;
+      first as isFirst;
+      last as isLast;"
+      [index]="i"
+      [isFirst]="isFirst"
+      [isLast]="isLast"
+      [member]="member"
+      (removedMember)="onRemovedMember($event)">
+    >
+    </app-family-members-form-members-item>
+  </div>
+  <div class="text-center">
+    <app-family-members-form-members-add (addedMember)="onAddedMember()">
+    </app-family-members-form-members-add>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="row">
+    <app-tasks-workday-item
+        *ngFor="let task of tasks$ | async"
+        [title]="task.title"
+        [description]="task.description"
+        [status]="task.status"
+        class="col-md-4"
+        (taskRemoved)="onTaskRemoved($event)">
+    </app-tasks-workday-item>
+</div>
+

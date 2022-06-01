@@ -1,0 +1,12 @@
+<div class="card border-light mt-3">
+  <div class="card-header">
+    {{ title }}
+    <i class="material-icons md-grey float-end"
+    (click)="removeTask(title)">delete</i>
+  </div>
+    <div class="card-body">
+     <p>Description : <strong>{{ description }}</strong></p>
+     <p>Status : <strong>{{ status }}</strong></p>
+    </div>
+</div>
+
