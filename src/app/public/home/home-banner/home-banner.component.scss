@@ -1,6 +1,19 @@
 .jumbotron {
     background-image: url('../../../../assets/img/Family.jpeg');
-    background-size: cover;
     min-height: 380px;
+    background-size: contain !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: 90%;
 }
-   
+
+@media (max-width: 1300px) {
+    .jumbotron {
+        background-image: none !important;
+    }
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #5571a7 !important;
+}

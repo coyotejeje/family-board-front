@@ -21,7 +21,7 @@ export class ProfilComponent implements OnInit {
    //this.user = this.authService.currentUser;
   
    this.profilForm = this.fb.group({
-    'firstName': [this.user?.firstName, [
+    'firstName': ['Julie', [
      Validators.required,
      Validators.minLength(4),
      Validators.maxLength(20),

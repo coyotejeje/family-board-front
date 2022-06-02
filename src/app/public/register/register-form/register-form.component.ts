@@ -47,7 +47,7 @@ export class RegisterFormComponent implements OnInit {
     this.authService
       .register(this.firstName?.value, this.email?.value, this.password?.value)
       .subscribe(
-        () => this.router.navigate(['/app/dashboard']),
+        () => this.router.navigate(['/app/family-members']),
         () => this.registerForm.reset()
       );
   }
