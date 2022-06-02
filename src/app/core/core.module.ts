@@ -5,6 +5,8 @@ import { ProtectedModule } from '../protected/protected.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HttpClientModule } from "@angular/common/http";
+import { ToastrComponent } from './components/toastr/toastr.component';
+import { AlertModule } from 'ngx-bootstrap/alert';
 
 
 
@@ -12,14 +14,16 @@ import { HttpClientModule } from "@angular/common/http";
 @NgModule({
   declarations: [
     NavbarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ToastrComponent,
     ],
   imports: [
     CommonModule,
     PublicModule,
     ProtectedModule,
-    HttpClientModule
+    HttpClientModule,
+    AlertModule.forRoot(),
   ],
-  exports: [NavbarComponent, PageNotFoundComponent]
+  exports: [NavbarComponent, PageNotFoundComponent, ToastrComponent]
 })
 export class CoreModule { }

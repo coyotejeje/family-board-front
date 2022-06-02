@@ -11,7 +11,6 @@ export class TasksWorkdayItemComponent implements OnChanges {
   @Input() title: string;
   @Input() description: string;
   @Input() status: boolean;
-  //@Input() task : {title: string, description: string, status: boolean, startDate?: Date, endDate?: Date, givenPoints?: number}
   @Output() taskRemoved = new EventEmitter<string>();
 
   constructor() { }

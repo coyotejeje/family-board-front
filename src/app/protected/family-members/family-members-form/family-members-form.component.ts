@@ -39,9 +39,9 @@ export class FamilyMembersFormComponent implements OnInit {
   submit(): void {
     //this.familyMemberForm.value
     this.familyMembersService.addMembersToFamily(this.familyMemberForm.value).subscribe(data => {
-      console.log(data)
+      //console.log(data)
     })
-    //console.log(this.familyMemberForm.value);
+    console.log(this.familyMemberForm.value);
     //this.router.navigate(['/app/dashboard']);
   }
 }

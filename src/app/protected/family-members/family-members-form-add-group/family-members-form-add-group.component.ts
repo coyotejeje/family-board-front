@@ -15,7 +15,6 @@ export class FamilyMembersFormAddGroupComponent implements OnInit {
   familly: Family;
   familyMembersForm: FormGroup
   @Output() idFamilyEvent = new EventEmitter<number>();
-  //@Output() hiddenButtonCreateGroup = new EventEmitter<void>();
 
   constructor(
     private fb: FormBuilder,
